@@ -45,8 +45,8 @@
                             <div class="client-area position-relative">
                                 <span id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account <i class="fa fa-caret-down"></i></span>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Sign In</a>
-                                    <a class="dropdown-item" href="#">Sign Up</a>
+                                    <a class="dropdown-item" href="registration.php">Register</a>
+                                    <a class="dropdown-item" href="login.php">Login</a>
                                 </div>
                             </div>
                         </div>
