@@ -139,7 +139,7 @@
                         <!-- Header Call -->
                         <div class="header-call text-right">
                             <span>Call Now</span>
-                            <a href="tel:+1234567890">(+1) 234-567-8900</a>
+                            <a href="tel:+1234567890">(+91) 819-759-7627</a>
                         </div>
                     </div>
                 </div>
@@ -154,12 +154,12 @@
             <div class="swiper-wrapper">
                 <!-- Single slide -->
                 <div class="swiper-slide position-relative">
-                    <img src="img/slide1.jpg" data-rjs="2" alt="">
+                    <img src="img/skiderimg.jpg" width="1920" height="630" data-rjs="2" alt="">
                     <div class="slide-content container">
                         <div class="row align-items-center">
                             <div class="col-xl-6 col-lg-8">
                                 <div class="slide-content-inner">
-                                    <h4 data-animate="fadeInUp" data-delay=".05">Best Internet Service Provider In USA</h4>
+                                    <h4 data-animate="fadeInUp" data-delay=".05">Best Internet Service Provider</h4>
                                     <h2 data-animate="fadeInUp" data-delay=".3">Don’t Suffer The Buffer Speeds Up to 1 Gbps with Unlimited Data</h2>
                                     <a data-animate="fadeInUp" data-delay=".6" href="#" class="btn">Learn More</a>
                                 </div>
@@ -171,7 +171,7 @@
                 
                 <!-- Single slide -->
                 <div class="swiper-slide position-relative">
-                    <img src="img/slide2.jpg" data-rjs="2" alt="">
+                    <img src="img/slider2.png" width="1920" data-rjs="2" alt="">
                     <div class="slide-content container">
                         <div class="row align-items-center">
                             <div class=" col-xl-6 col-lg-8">
@@ -203,8 +203,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="number-one-content" data-animate="fadeInUp" data-delay=".5">
-                        <h2 class="mb-3">We are no. 1 internet service provider company in United States.</h2>
-                        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.</p>
+                        <h2 class="mb-3">We are no. 1  internet service provider company.</h2>
+                        <p>We are the leaders amongst the Broadband service providers in India who focus on you, our customers. The internet is what drives today's society. People now require high speed internet for almost every task, which is why data connectivity has become a necessity. If you are looking for a reliable internet service provider, contact us. We offer attractive packages coupled with excellent services for you.</p>
                         <a href="#" class="btn">View Details</a>
                     </div>
                 </div>
@@ -216,7 +216,7 @@
                             <img src="img/icons/setup.svg" alt="" class="svg">
                         </div>
                         <div class="single-feature-content">
-                            <h4>Free Installations & Setup</h4>
+                            <h4>Installations & Setup</h4>
                             <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
                         </div>
                     </div>
@@ -271,7 +271,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-service single-service-white text-center" data-animate="fadeInUp" data-delay=".4">
                         <img src="img/icons/phone.svg" alt="" class="svg">
-                        <h4>Phone Service</h4>
+                        <h4>Real Time Tech Support</h4>
                         <p>Lorem ipsum dolor sit ametteturmpor incididunt most popular.</p>
                         <a href="mobile.html">Learn More <i class="fa fa-angle-right"></i></a>
                     </div>
@@ -279,7 +279,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-service single-service-white text-center" data-animate="fadeInUp" data-delay=".7">
                         <img src="img/icons/tv.svg" alt="" class="svg">
-                        <h4>Cable TV</h4>
+                        <h4>Quick Bill Pay</h4>
                         <p>Lorem ipsum dolor sit ametteturmpor incididunt most popular.</p>
                         <a href="cable-tv.html">Learn More <i class="fa fa-angle-right"></i></a>
                     </div>
@@ -287,7 +287,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-service single-service-white text-center" data-animate="fadeInUp" data-delay="1">
                         <img src="img/icons/server.svg" alt="" class="svg">
-                        <h4>Dedicated Server</h4>
+                        <h4>Plan Upgrades</h4>
                         <p>Lorem ipsum dolor sit ametteturmpor incididunt most popular.</p>
                         <a href="dedicated-server.html">Learn More <i class="fa fa-angle-right"></i></a>
                     </div>
