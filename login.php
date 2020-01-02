@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Login</title>
-<link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
 <?php
 require('db.php');
 session_start();
@@ -22,17 +14,30 @@ if (isset($_POST['username'])){
 and password='".md5($password)."'";
  $result = mysqli_query($con,$query) or die(mysql_error());
  $rows = mysqli_num_rows($result);
+ $res = mysqli_fetch_assoc($result);
         if($rows==1){
+               $getid = $res['id'];
+               $_SESSION['userid'] = $getid;
      $_SESSION['username'] = $username;
             // Redirect user to index.php
+            $_SESSION['username']=$username;
      header("Location: index.php");
          }else{
  echo "<div class='form'>
 <h3>Username/password is incorrect.</h3>
 <br/>Click here to <a href='login.php'>Login</a></div>";
  }
-    }else{
+    }
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
 <div class="form">
 <h1>Log In</h1>
 <form action="" method="post" name="login">
@@ -42,6 +47,6 @@ and password='".md5($password)."'";
 </form>
 <p>Not registered yet? <a href='registration.php'>Register Here</a></p>
 </div>
-<?php } ?>
+
 </body>
 </html>

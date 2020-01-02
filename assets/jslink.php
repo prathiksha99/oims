@@ -1,0 +1,12 @@
+<script src="lander-plugins/js/jquery-3.3.1.min.js"></script>
+    <script src="lander-plugins/js/bootstrap.bundle.min.js"></script>
+    <script src="lander-plugins/plugins/waypoints/jquery.waypoints.min.js"></script>
+    <script src="lander-plugins/plugins/waypoints/sticky.min.js"></script>
+    <script src="lander-plugins/plugins/swiper/swiper.min.js"></script>
+    <script src="lander-plugins/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="lander-plugins/plugins/parsley/parsley.min.js"></script>
+    <script src="lander-plugins/plugins/retinajs/retina.min.js"></script>
+    <script src="lander-plugins/plugins/isotope/isotope.pkgd.min.js"></script>
+    <script src="lander-plugins/js/menu.min.js"></script>
+    <script src="lander-plugins/js/scripts.js"></script>
+    <script src="lander-plugins/js/custom.js"></script>
