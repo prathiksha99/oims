@@ -1,3 +1,12 @@
+<?php
+//session_start();
+//if(!isset($_SESSION['username']))
+//{
+  //  echo "<script>window.location.href='login.php'</script>";
+//}
+//$uname = $_SESSION['username'];
+//include("auth.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,21 +14,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Document Title -->
-    <title>Serviney</title>
-
+    <title>Air.IP- User</title>
+<link rel="stylesheet" href="./lander-plugins/css/style.css">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="favicon.png">
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,500,700%7CSource+Sans+Pro:300i,400,400i,600,700">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="plugins/swiper/swiper.min.css">
-    <link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/colors/theme-color-1.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <!--  ?>  -->
 </head>
 
 <body>
@@ -45,8 +46,8 @@
                             <div class="client-area position-relative">
                                 <span id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account <i class="fa fa-caret-down"></i></span>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="registration.php">Register</a>
-                                    <a class="dropdown-item" href="login.php">Login</a>
+                                    <a class="dropdown-item" href="login/auth-register.php">Register</a>
+                                    <a class="dropdown-item" href="login/auth-login.php">Login</a>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +63,7 @@
                         <!-- Logo -->
                         <div class="logo">
                             <a href="index.html">
-                                <img src="img/logo.png" data-rjs="2" alt="VPNet">
+                                <img src="lander-plugins/img/logo.png" data-rjs="2" alt="VPNet">
                             </a>
                         </div>
                     </div>
@@ -72,7 +73,6 @@
                             <div class="header-menu">
                                 <ul>
                                     <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="http://billing.ywhmcs.com/?systpl=Serviney">WHMCS</a></li>
                                     <li>
                                         <a href="#">Pages <i class="fa fa-caret-down"></i></a>
                                         <ul>
@@ -87,31 +87,8 @@
                                         <a href="#">Services <i class="fa fa-caret-down"></i></a>
                                         <ul>
                                             <li><a href="services.html">All services</a></li>
-                                            <li><a href="cable-tv.html">Cable TV</a></li>
-                                            <li><a href="dedicated-server.html">Dedicated server</a></li>
+                                            <li><a href="dedicated-server.html">Dedicated services</a></li>
                                             <li><a href="internet.html">Internet provider</a></li>
-                                            <li><a href="mobile.html">Mobile packages</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Blog <i class="fa fa-caret-down"></i></a>
-                                        <ul>
-                                            <li><a href="blog.html">Full Width</a></li>
-                                            <li>
-                                                <a href="#">Blog With Sidebar <i class="fa fa-caret-right"></i></a>
-                                                <ul>
-                                                    <li><a href="blog-sidebar-left.html">Blog Sidebar Left</a></li>
-                                                    <li><a href="blog-sidebar-right.html">Blog Sidebar Right</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">Blog Columns <i class="fa fa-caret-right"></i></a>
-                                                <ul>
-                                                    <li><a href="blog-2-columns.html">2 Columns Blog</a></li>
-                                                    <li><a href="blog-3-columns.html">3 Columns Blog</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -154,7 +131,7 @@
             <div class="swiper-wrapper">
                 <!-- Single slide -->
                 <div class="swiper-slide position-relative">
-                    <img src="img/skiderimg.jpg" width="1920" height="630" data-rjs="2" alt="">
+                    <img src="lander-plugins/img/skiderimg.jpg" width="1920" height="630" data-rjs="2" alt="">
                     <div class="slide-content container">
                         <div class="row align-items-center">
                             <div class="col-xl-6 col-lg-8">
@@ -171,7 +148,7 @@
                 
                 <!-- Single slide -->
                 <div class="swiper-slide position-relative">
-                    <img src="img/slider2.png" width="1920" data-rjs="2" alt="">
+                    <img src="lander-plugins/img/slider2.png" width="1920" data-rjs="2" alt="">
                     <div class="slide-content container">
                         <div class="row align-items-center">
                             <div class=" col-xl-6 col-lg-8">
@@ -198,7 +175,7 @@
             <div class="row align-items-center pb-80">
                 <div class="col-lg-6 d-none d-lg-block">
                     <div class="text-center" data-animate="fadeInUp" data-delay=".1">
-                        <img src="img/number-one.png" alt="" data-rjs="2">
+                        <img src="lander-plugins/img/number-one.png" alt="" data-rjs="2">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -264,24 +241,21 @@
                     <div class="single-service single-service-white text-center" data-animate="fadeInUp" data-delay=".1">
                         <img src="img/icons/earth.svg" alt="" class="svg">
                         <h4>High Speed Internet</h4>
-                        <p>Lorem ipsum dolor sit ametteturmpor incididunt most popular.</p>
-                        <a href="internet.html">Learn More <i class="fa fa-angle-right"></i></a>
+                        <p>The internet is a major source of information that we consume today. Whether for a school project, an office work, entertainment or a video call to your loved onces accross the globe, high-speed internet is the need of the present and the future. We provide ultra-speed, reliable connection and efficient services to our customers at an affordable price.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-service single-service-white text-center" data-animate="fadeInUp" data-delay=".4">
                         <img src="img/icons/phone.svg" alt="" class="svg">
                         <h4>Real Time Tech Support</h4>
-                        <p>Lorem ipsum dolor sit ametteturmpor incididunt most popular.</p>
-                        <a href="mobile.html">Learn More <i class="fa fa-angle-right"></i></a>
+                        <p>Real Time Services offers multiple means to find out answers to the most challenging IT issues. Our support services are structured to meet almost every support demand. Clients can access our 24x7 services. The availability of our dedicated support team ensures that clients can have their IT issues resolved in a timely fashion.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-service single-service-white text-center" data-animate="fadeInUp" data-delay=".7">
                         <img src="img/icons/tv.svg" alt="" class="svg">
-                        <h4>Quick Bill Pay</h4>
-                        <p>Lorem ipsum dolor sit ametteturmpor incididunt most popular.</p>
-                        <a href="cable-tv.html">Learn More <i class="fa fa-angle-right"></i></a>
+                        <h4>Assured Rates</h4>
+                        <p>The internet is what drives today's society. People now require high-speed internet for almost every task. People are mostly looking for a reliable internet providers who offer attractive packages coupled with excellent services. Hence we provide ultra-speed, reliable connection and efficient services assured rates which the customers feel worth of paying.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -943,15 +917,15 @@
                                 <ul class="list-unstyled">
                                     <li>
                                         <i class="fa fa-phone"></i>
-                                        <a href="tel:+1234567890">(+1) 234-567-890</a>
+                                        <a href="tel:+1234567890">(+91) 819-759-7627</a>
                                     </li>
                                     <li>
                                         <i class="fa fa-envelope-o"></i>
-                                        <a href="mailto:serviney.demo@fakemail.com">serviney.demo@fakemail.com</a>
+                                        <a href="mailto:serviney.demo@fakemail.com">Air.IPdemo@fakemail.com</a>
                                     </li>
                                     <li>
                                         <i class="fa fa-map-marker"></i>
-                                        <span>784/A Zirtoli Bazar, Begumgonj, Noakhali-3800, BD</span>
+                                        <span>Sandspit Bengre, Mangaluru-575013</span>
                                     </li>
                                 </ul>
                             </div>
@@ -968,7 +942,7 @@
                                     <li><a href="#">Pay My Bills</a></li>
                                     <li><a href="#">Manage My Account</a></li>
                                     <li><a href="#">Constant Guard</a></li>
-                                    <li><a href="#">Cable Customer Agreement</a></li>
+                                    <li><a href="#">Internet Customer Agreement</a></li>
                                     <li><a href="#">Move Services</a></li>
                                     <li><a href="#">Manage Users & Alerts</a></li>
                                     <li><a href="#">Log Out</a></li>
@@ -1005,11 +979,8 @@
                             <h3 class="h4">Popular Products</h3>
                             <div class="menu-wrap">
                                 <ul class="menu">
-                                    <li><a href="#">CC TV Camera</a></li>
                                     <li><a href="#">Internet Connection Modem</a></li>
                                     <li><a href="#">Wireless Router</a></li>
-                                    <li><a href="#">Update Anti-virus Softwares</a></li>
-                                    <li><a href="#">Fingerprint Access</a></li>
                                     <li><a href="#">Powerful Switch Cable</a></li>
                                     <li><a href="#">Wireless USB Adapter/Card</a></li>
                                     <li><a href="#">Internet Help</a></li>
@@ -1028,7 +999,7 @@
                     <!-- Copyright -->
                     <div class="col-md-6">
                         <div class="copyright-text text-center text-md-left">
-                            <p class="mb-md-0">&copy; 2018 Serviney. All rights reserved.</p>
+                            <p class="mb-md-0">&copy; 2020 Air.IP. All rights reserved.</p>
                         </div>
                     </div>
 
@@ -1054,17 +1025,6 @@
     </div>
 
     <!-- JS Files -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="plugins/waypoints/jquery.waypoints.min.js"></script>
-    <script src="plugins/waypoints/sticky.min.js"></script>
-    <script src="plugins/swiper/swiper.min.js"></script>
-    <script src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="plugins/parsley/parsley.min.js"></script>
-    <script src="plugins/retinajs/retina.min.js"></script>
-    <script src="plugins/isotope/isotope.pkgd.min.js"></script>
-    <script src="js/menu.min.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/custom.js"></script>
+    <?php include_once('assets/jslink.php'); ?> 
 </body>
 </html>

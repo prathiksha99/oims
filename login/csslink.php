@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,500,700%7CSource+Sans+Pro:300i,400,400i,600,700">
+    <link rel="stylesheet" href="lander-plugins/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lander-plugins/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lander-plugins/plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="lander-plugins/plugins/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" href="lander-plugins/css/style.css">
+    <link rel="stylesheet" href="lander-plugins/css/responsive.css">
+    <link rel="stylesheet" href="lander-plugins/css/colors/theme-color-1.css">
+    <link rel="stylesheet" href="lander-plugins/css/custom.css">
