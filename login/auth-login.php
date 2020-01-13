@@ -6,17 +6,24 @@ if (isset($_POST['login'])) {
     $uname = $_POST['uname'];
     $pwd = $_POST['pwd'];
 
-    $query = "SELECT * FROM user WHERE uname='$uname'
-                and pwd='$pwd'";
+    $query = "SELECT * FROM user WHERE uname='$uname' and pwd='$pwd'";
     $result = mysqli_query($con, $query);
     $rows = mysqli_num_rows($result);
     if ($rows >= 1) {
         $_SESSION['uname'] = $uname;
         echo "<script> window.location='../index.php'; </script>";
     } else {
+        $query2= "SELECT * FROM `admin` WHERE auname='$uname' AND  apwd='$pwd'";
+        $result2= mysqli_query($con,$query2);
+        $rows2=mysqli_num_rows($result2);
+        if ($rows2 >=1) {
+                $SESSION[' auname']=$uname;
+                echo "<script> window.location= 'index.php'; </script>";
+        } else {
         echo "<div class='form'>
-                        <h3>Username/password is incorrect.</h3>
+                    <h3>Username/password is incorrect.</h3>
                          <br/>Click here to <a href='auth-login.php'>Login</a></div>";
+        }
     }
 }
 ?>

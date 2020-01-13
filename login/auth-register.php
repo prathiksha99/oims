@@ -11,10 +11,14 @@ if (isset($_POST['register']))
     $email = $_POST['email'];
     $pwd = $_POST['pwd'];
     $conpwd = $_POST['conpwd'];
-
-    $query = "INSERT into `user` (uname, add1, add2, gender, contact, email, pwd)
-        VALUES ('$uname', '$add1', '$add2','$gender','$contact','$email', '$pwd ')";
-    $result = mysqli_query($con, $query);
+    if($pwd!= $conpwd)
+    {
+        echo "<script> window.alert('Passwords do not match!'); </script>";
+    }
+    else
+    {
+        $query = "INSERT into `user` (uname, add1, add2, gender, contact, email, pwd) VALUES ('$uname', '$add1', '$add2','$gender','$contact','$email', '$pwd ')";
+        $result = mysqli_query($con, $query);
     if ($result)
     {
         $smsg = "You have registered successfully";
@@ -26,8 +30,7 @@ if (isset($_POST['register']))
     {
         $smsg=mysqli_error($con);
     }
-
-    
+    }
 }
 ?>
 <!DOCTYPE html>
