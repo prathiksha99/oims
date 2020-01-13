@@ -1,3 +1,13 @@
+<?php
+   // session_start();
+    //if(!isset($_SESSION['auname']))
+    //{
+      //  echo "<script>window.location.href='admin/index.php'</script>";
+    //}
+    //$uname = $_SESSION['auname'];
+    //include("auth.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

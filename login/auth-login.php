@@ -64,7 +64,7 @@ if (isset($_POST['login'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
                                     </div>
-                                    <input name="uname" type="text" class="form-control" id="username" placeholder="Enter username">
+                                    <input name="uname" type="text" class="form-control" id="username" placeholder="Enter username" required/>
                                 </div>
                             </div>
 
@@ -74,7 +74,7 @@ if (isset($_POST['login'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon2"><i class="fa fa-key"></i></span>
                                     </div>
-                                    <input type="password" class="form-control" id="userpassword" placeholder="Enter password" name="pwd">
+                                    <input type="password" class="form-control" id="userpassword" placeholder="Enter password" name="pwd" required/>
                                 </div>
                             </div>
 

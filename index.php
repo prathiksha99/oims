@@ -1,15 +1,11 @@
 <?php
-//session_start();
-//if(!isset($_SESSION['username']))
-//{
-  //  echo "<script>window.location.href='login.php'</script>";
-//}
-//$uname = $_SESSION['username'];
-//include("auth.php");
-?>
-<?php
-//include auth.php file on all secure pages
-include("auth.php");
+    session_start();
+    if(!isset($_SESSION['uname']))
+    {
+      echo "<script>window.location.href='login/auth-login.php'</script>";
+    }
+    $uname = $_SESSION['uname'];
+    include("auth.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

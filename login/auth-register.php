@@ -1,8 +1,8 @@
 <?php
 require('db.php');
 // If form submitted, insert values into the database.
-if (isset($_POST['register'])) {
-
+if (isset($_POST['register'])) 
+{
     $uname = $_POST['uname'];
     $add1 = $_POST['add1'];
     $add2 = $_POST['add2'];
@@ -15,7 +15,8 @@ if (isset($_POST['register'])) {
     $query = "INSERT into `user` (uname, add1, add2, gender, contact, email, pwd)
         VALUES ('$uname', '$add1', '$add2','$gender','$contact','$email', '$pwd ')";
     $result = mysqli_query($con, $query);
-    if ($result) {
+    if ($result)
+    {
         $smsg = "You have registered successfully";
         echo "<script> window.setTimeout(function(){
             window.location.href='auth-login.php';
@@ -25,6 +26,8 @@ if (isset($_POST['register'])) {
     {
         $smsg=mysqli_error($con);
     }
+
+    
 }
 ?>
 <!DOCTYPE html>
@@ -53,7 +56,7 @@ if (isset($_POST['register'])) {
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
-                            <i class="mdi mdi-check-circle mr-2"></i><?php echo $smsg; ?>
+                            <i class="mdi mdi-check-circle mr-2"></i><?php echo $smsg;?>
                         </div>
                         <?php } ?>
                         <form class="form-horizontal my-4" method="POST">
@@ -64,7 +67,7 @@ if (isset($_POST['register'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
                                     </div>
-                                    <input type="text" name="uname" class="form-control" id="username" placeholder="Enter username">
+                                    <input type="text" name="uname" class="form-control" id="username" placeholder="Enter username" required/>
                                 </div>
                             </div>
 
@@ -76,7 +79,7 @@ if (isset($_POST['register'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
                                     </div>
-                                    <input type="text" name="add1" class="form-control" id="add1" placeholder="Enter Address">
+                                    <input type="text" name="add1" class="form-control" id="add1" placeholder="Enter Address" required/>
                                 </div>
                             </div>
 
@@ -87,18 +90,18 @@ if (isset($_POST['register'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
                                     </div>
-                                    <input type="text" name="add2" class="form-control" id="add2" placeholder="Enter Address2">
+                                    <input type="text" name="add2" class="form-control" id="add2" placeholder="Enter Address2" required/>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="gender">Gender</label>
                                     <div class="custom-control custom-radio my-2">
-                                            <input value="male" type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                            <input value="male" type="radio" id="customRadio1" name="customRadio" class="custom-control-input" required/>
                                             <label class="custom-control-label" for="customRadio1">Male</label>
                                         </div>
                                         <div style="margin-right: 5px;" class="custom-control custom-radio my-2">
-                                            <input value="female" type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                            <input value="female" type="radio" id="customRadio2" name="customRadio" class="custom-control-input" required/>
                                             <label class="custom-control-label" for="customRadio2">Female</label>
                                         </div>
                             </div>
@@ -109,7 +112,7 @@ if (isset($_POST['register'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
                                     </div>
-                                    <input type="text" name="contact" class="form-control" id="contact" placeholder="Enter Phone Number">
+                                    <input type="text" name="contact" class="form-control" id="contact" placeholder="Enter Phone Number" required/>
                                 </div>
                             </div>
 
@@ -122,7 +125,7 @@ if (isset($_POST['register'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon2"><i class="far fa-envelope"></i></span>
                                     </div>
-                                    <input type="text" name="email" class="form-control" id="email" placeholder="Email Address">
+                                    <input type="text" name="email" class="form-control" id="email" placeholder="Email Address" required/>
                                 </div>
                             </div>
 
@@ -132,7 +135,7 @@ if (isset($_POST['register'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon3"><i class="fas fa-lock"></i></span>
                                     </div>
-                                    <input type="password" name="pwd" class="form-control" id="userpassword" placeholder="Enter password">
+                                    <input type="password" name="pwd" class="form-control" id="userpassword" placeholder="Enter password" required/>
                                 </div>
                             </div>
 
@@ -142,7 +145,7 @@ if (isset($_POST['register'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon4"><i class="fas fa-key"></i></span>
                                     </div>
-                                    <input type="password" name="conpwd" class="form-control" id="confirmpassword" placeholder="Confirm password">
+                                    <input type="password" name="conpwd" class="form-control" id="confirmpassword" placeholder="Confirm password" required/>
                                 </div>
                             </div>
 
@@ -167,7 +170,7 @@ if (isset($_POST['register'])) {
                     <div class="m-3 text-center bg-light p-3 text-primary">
                         <h4 class="">Already have an account ? </h4>
                         <p class="font-13">Login <span>Amezia</span> Now</p>
-                        <a href="#" class="btn btn-primary waves-effect waves-light">Log In</a>
+                        <a href="auth-login.php" class="btn btn-primary waves-effect waves-light">Log In</a>
                     </div>
                     <div class="mt-4 text-center">
                         <p class="mb-0">© 2018-2019 Amezia. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
