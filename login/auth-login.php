@@ -1,5 +1,5 @@
 <?php
-require('db.php');
+require('../access/db.php');
 session_start();
 // If form submitted, insert values into the database.
 if (isset($_POST['login'])) {
@@ -13,14 +13,16 @@ if (isset($_POST['login'])) {
         $_SESSION['uname'] = $uname;
         echo "<script> window.location='../index.php'; </script>";
     } else {
-        $query2= "SELECT * FROM `admin` WHERE auname='$uname' AND  apwd='$pwd'";
-        $result2= mysqli_query($con,$query2);
-        $rows2=mysqli_num_rows($result2);
-        if ($rows2 >=1) {
-                $SESSION[' auname']=$uname;
-                echo "<script> window.location= 'index.php'; </script>";
+        $query2 = "SELECT * FROM `admin` WHERE auname='$uname' AND  apwd='$pwd'";
+        $result2 = mysqli_query($con, $query2);
+        $getinfo = mysqli_fetch_assoc($result2);
+        $rows2 = mysqli_num_rows($result2);
+        if ($rows2 >= 1) {
+            $_SESSION['auname'] = $getinfo['auname'];
+            $_SESSION['aid'] = $getinfo['aid'];
+            echo "<script> window.location= '../admin/index.php'; </script>";
         } else {
-        echo "<div class='form'>
+            echo "<div class='form'>
                     <h3>Username/password is incorrect.</h3>
                          <br/>Click here to <a href='auth-login.php'>Login</a></div>";
         }
@@ -32,7 +34,7 @@ if (isset($_POST['login'])) {
 
 <head>
     <meta charset="utf-8" />
-    <title>Amezia - Responsive Bootstrap 4 Admin Dashboard</title>
+    <title>OIMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A premium admin dashboard template by themesbrand" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -71,7 +73,7 @@ if (isset($_POST['login'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
                                     </div>
-                                    <input name="uname" type="text" class="form-control" id="username" placeholder="Enter username" required/>
+                                    <input name="uname" type="text" class="form-control" id="username" placeholder="Enter username" required />
                                 </div>
                             </div>
 
@@ -81,7 +83,7 @@ if (isset($_POST['login'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon2"><i class="fa fa-key"></i></span>
                                     </div>
-                                    <input type="password" class="form-control" id="userpassword" placeholder="Enter password" name="pwd" required/>
+                                    <input type="password" class="form-control" id="userpassword" placeholder="Enter password" name="pwd" required />
                                 </div>
                             </div>
 

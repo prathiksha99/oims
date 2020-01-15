@@ -1,6 +1,7 @@
 <?php
-    include('db.php');
-    $getquery = mysqli_query($con, "SELECT * FROM plans");
+    include('access/db.php');
+    $getquery = mysqli_query ($con, "SELECT * FROM plans");
+
 ?>
 <html>
     <body>
@@ -12,8 +13,7 @@
                 <th> Price </th>
                 <th> GST </th>
             </tr>
-<?php
-    while($getdata = mysqli_fetch_assoc($getquery)) { ?>
+<?php while($getdata=mysqli_fetch_assoc($getquery)) { ?>
 <tr>
     <td><?php echo $getdata['speed'];?></td>
     <td><?php echo $getdata['data'];?></td>
