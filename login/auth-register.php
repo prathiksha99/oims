@@ -53,7 +53,7 @@ if (isset($_POST['register']))
 
                     <div class="px-3">
                         <h4 class="text-muted font-18 mb-2 text-center">Free Register</h4>
-                        <p class="text-muted text-center">Get your free Amezia account now.</p>
+                        <p class="text-muted text-center">Get your free Air.IP account now.</p>
                         <?php if(isset($smsg)) { ?>
                         <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -74,8 +74,6 @@ if (isset($_POST['register']))
                                 </div>
                             </div>
 
-
-
                             <div class="form-group">
                                 <label for="add1">Address1</label>
                                 <div class="input-group mb-3">
@@ -85,7 +83,6 @@ if (isset($_POST['register']))
                                     <input type="text" name="add1" class="form-control" id="add1" placeholder="Enter Address" required/>
                                 </div>
                             </div>
-
 
                             <div class="form-group">
                                 <label for="add2">Address2</label>
@@ -119,9 +116,6 @@ if (isset($_POST['register']))
                                 </div>
                             </div>
 
-
-
-
                             <div class="form-group">
                                 <label for="username">Email Address</label>
                                 <div class="input-group mb-3">
@@ -152,17 +146,6 @@ if (isset($_POST['register']))
                                 </div>
                             </div>
 
-                            <div class="form-group row mt-4">
-                                <div class="col-sm-12">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customControlInline">
-                                        <label class="custom-control-label" for="customControlInline">
-                                            <span class="font-13 text-muted mb-0">By registering you agree to the Amezia <a href="#">Terms of Use</a></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="form-group mb-0 row">
                                 <div class="col-12 mt-2">
                                     <button name="register" class="btn btn-primary btn-block waves-effect waves-light" type="submit">Register <i class="fas fa-sign-in-alt ml-1"></i></button>
@@ -171,12 +154,12 @@ if (isset($_POST['register']))
                         </form>
                     </div>
                     <div class="m-3 text-center bg-light p-3 text-primary">
-                        <h4 class="">Already have an account ? </h4>
-                        <p class="font-13">Login <span>Amezia</span> Now</p>
+                        <h4 class="">Already have an account? </h4>
+                        <p class="font-13">Login to <span> Air.IP</span> Now</p>
                         <a href="auth-login.php" class="btn btn-primary waves-effect waves-light">Log In</a>
                     </div>
                     <div class="mt-4 text-center">
-                        <p class="mb-0">© 2018-2019 Amezia. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+                        <p class="mb-0">© 2019-2020 Air.IP.<i class="mdi mdi-heart text-danger"></i></p>
                     </div>
                 </div>
             </div>
@@ -184,9 +167,9 @@ if (isset($_POST['register']))
         <div class="col-lg-9 p-0 h-100vh d-flex justify-content-center">
             <div class="accountbg d-flex align-items-center">
                 <div class="account-title text-center text-white">
-                    <h4 class="mt-3">Welcome To <span class="text-warning">AMEZIA</span> </h4>
+                    <h4 class="mt-3">Welcome To <span class="text-warning">Air.IP</span> </h4>
                     <h1 class="">Let's Get Started</h1>
-                    <p class="font-14 mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod.</p>
+                    <p class="font-14 mt-3">We make technology simple for our customers, saving them time and money.</p>
                     <div class="border w-25 mx-auto border-warning"></div>
                 </div>
             </div>

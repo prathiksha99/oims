@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>OIMS</title>
+        <title>oims</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A premium admin dashboard template by themesbrand" name="description" />
         <meta content="Themesbrand" name="author" />

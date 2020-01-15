@@ -8,7 +8,7 @@
         <table border>
             <tr>
                 <th> Speed </th>
-                <th> Data </th>
+                <th> Monthly Data </th>
                 <th> FUP </th>
                 <th> Price </th>
                 <th> GST </th>
@@ -16,7 +16,7 @@
 <?php while($getdata=mysqli_fetch_assoc($getquery)) { ?>
 <tr>
     <td><?php echo $getdata['speed'];?></td>
-    <td><?php echo $getdata['data'];?></td>
+    <td><?php echo $getdata['mdata'];?></td>
     <td><?php echo $getdata['fup'];?></td>
     <td><?php echo $getdata['price'];?></td>
     <td><?php echo $getdata['gst'];?></td>
@@ -25,3 +25,5 @@
         </table>
     </body>
 </html>
+
+
