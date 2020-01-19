@@ -8,7 +8,7 @@
         <link rel="shortcut icon" href="../plugins/images/favicon.ico">
 
         <!--Morris Chart CSS -->
-        <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+        <link rel="stylesheet" href="../plugins/plugins/morris/morris.css">
         <link href="../plugins/plugins/metro/MetroJs.min.css" rel="stylesheet" >
 
         <!-- App css -->

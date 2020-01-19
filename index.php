@@ -1,14 +1,14 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['uname']))
-    {
-      echo "<script>window.location.href='login/auth-login.php'</script>";
-    }
-    $uname = $_SESSION['uname'];
-    include("auth.php");
+include 'access/db.php';
+session_start();
+if (!isset($_SESSION['uname'])) {
+    echo "<script>window.location.href='login/auth-login.php'</script>";
+}
+$uname = $_SESSION['uname'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -137,7 +137,7 @@
                     </div>
                 </div>
                 <!-- End of Single slide -->
-                
+
                 <!-- Single slide -->
                 <div class="swiper-slide position-relative">
                     <img src="lander-plugins/img/slider2.png" width="1920" data-rjs="2" alt="">
@@ -160,7 +160,7 @@
         </div>
     </section>
     <!-- End of Banner -->
-    
+
     <!-- Abut Us -->
     <section class="pt-120 pb-55">
         <div class="container">
@@ -172,7 +172,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="number-one-content" data-animate="fadeInUp" data-delay=".5">
-                        <h2 class="mb-3">We are no. 1  internet service provider company.</h2>
+                        <h2 class="mb-3">We are no. 1 internet service provider company.</h2>
                         <p>We are the leaders amongst the Broadband service providers in India who focus on you, our customers. The internet is what drives today's society. People now require high speed internet for almost every task, which is why data connectivity has become a necessity. If you are looking for a reliable internet service provider, contact us. We offer attractive packages coupled with excellent services for you.</p>
                         <a href="#" class="btn">View Details</a>
                     </div>
@@ -274,74 +274,28 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Packages -->
+            <?php $getallplans = mysqli_query($con, "SELECT * FROM plans"); ?>
             <div class="row pb-90">
+            <?php while($getplansdata = mysqli_fetch_assoc($getallplans)) { ?>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-package text-center" data-animate="fadeInUp" data-delay=".1">
-                        <h4>Personal Pack</h4>
-                        <span>for personal user</span>
-                        <hr>
-                        <ul class="list-unstyled">
-                            <li>Free installation</li>
-                            <li>Up to <span>15 Mpbs</span> download speed</li>
-                            <li>Unlimited data usages</li>
-                            <li><span>01 year</span> pricing lock guarantee</li>
-                            <li>Unlimited bandwidth</li>
-                        </ul>
-                        <p><sup>$</sup>12.50 <span>/Monthly</span></p>
-                        <a href="#" class="btn">Order This Plan</a>
+                            <h4><?php echo $getplansdata['pname']; ?> </h4>
+                            <span>for personal user</span>
+                            <hr>
+                            <ul class="list-unstyled">
+                                <li>Free installation</li>
+                                <li>Up to <span><?php echo $getplansdata['speed']; ?> </span> download speed</li>
+                                <li><?php echo $getplansdata['mdata']; ?>  data usages</li>
+                                <li><span>01 year</span> pricing lock guarantee</li>
+                                <li>Unlimited bandwidth</li>
+                            </ul>
+                            <p><sup>₹</sup><?php echo $getplansdata['price']; ?> <span>/Monthly</span></p>
+                            <a href="#" class="btn">Order This Plan</a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-package text-center" data-animate="fadeInUp" data-delay=".4">
-                        <span class="pupular-pack">Most popular package</span>
-                        <h4>Family Pack</h4>
-                        <span>for family user</span>
-                        <hr>
-                        <ul class="list-unstyled">
-                            <li>Free installation</li>
-                            <li>Up to <span>25 Mpbs</span> download speed</li>
-                            <li>Unlimited data usages</li>
-                            <li><span>02 year</span> pricing lock guarantee</li>
-                            <li>Unlimited bandwidth</li>
-                        </ul>
-                        <p><sup>$</sup>24.50 <span>/Monthly</span></p>
-                        <a href="#" class="btn">Order This Plan</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-package text-center" data-animate="fadeInUp" data-delay=".7">
-                        <h4>Business Pack</h4>
-                        <span>for business user</span>
-                        <hr>
-                        <ul class="list-unstyled">
-                            <li>Free installation</li>
-                            <li>Up to <span>30 Mpbs</span> download speed</li>
-                            <li>Unlimited data usages</li>
-                            <li><span>03 year</span> pricing lock guarantee</li>
-                            <li>Unlimited bandwidth</li>
-                        </ul>
-                        <p><sup>$</sup>49.50 <span>/Monthly</span></p>
-                        <a href="#" class="btn">Order This Plan</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-package text-center" data-animate="fadeInUp" data-delay="1">
-                        <h4>Corporate Pack</h4>
-                        <span>for corporate user</span>
-                        <hr>
-                        <ul class="list-unstyled">
-                            <li>Free installation</li>
-                            <li>Up to <span>39 Mpbs</span> download speed</li>
-                            <li>Unlimited data usages</li>
-                            <li><span>Unlimited</span> pricing lock guarantee</li>
-                            <li>Unlimited bandwidth</li>
-                        </ul>
-                        <p><sup>$</sup>79.50 <span>/Monthly</span></p>
-                        <a href="#" class="btn">Order This Plan</a>
-                    </div>
-                </div>
+            <?php } ?>
             </div>
             <!-- End of Packages -->
 
@@ -462,7 +416,7 @@
                                                 <li><i class="fa fa-star"></i></li>
                                                 <li><i class="fa fa-star"></i></li>
                                             </ul>
-                                            <span><strong>Marie J. Campbell</strong>  Miami, USA</span>
+                                            <span><strong>Marie J. Campbell</strong> Miami, USA</span>
                                         </div>
                                     </div>
                                 </div>
@@ -508,7 +462,7 @@
                                                 <li><i class="fa fa-star"></i></li>
                                                 <li><i class="fa fa-star"></i></li>
                                             </ul>
-                                            <span><strong>Marie J. Campbell</strong>  Miami, USA</span>
+                                            <span><strong>Marie J. Campbell</strong> Miami, USA</span>
                                         </div>
                                     </div>
                                 </div>
@@ -538,7 +492,7 @@
                                 <!-- End of Single Review -->
                             </div>
                         </div>
-                        
+
                         <!-- Arrows -->
                         <div class="swiper-button-next next-review">
                             <img src="img/icons/right-arrow.svg" alt="" class="svg">
@@ -610,81 +564,6 @@
         </div>
     </section>
     <!-- End of FAQ -->
-
-    <!-- Latest news -->
-    <section class="light-bg pt-120 pb-120">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-8 col-md-10">
-                    <div class="section-title text-center" data-animate="fadeInUp" data-delay=".1">
-                        <h2>Latest News</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form by injected humour</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="latest-news-wraper position-relative">
-                        <div class="swiper-container news-slider">
-                            <div class="swiper-wrapper">
-                                <div class="single-news swiper-slide">
-                                    <a class="tip" href="#">News</a>
-                                    <img src="img/posts/post1.jpg" data-rjs="2" alt="">
-                                    <ul class="list-unstyled d-flex align-items-center">
-                                        <li><img src="img/authors/author1.jpg" alt=""></li>
-                                        <li>by <a href="#">Zane M. Frye</a></li>
-                                        <li><a href="#">January 19, 2018</a></li>
-                                    </ul>
-                                    <h3 class="h5"><a href="blog-details.html">Everything you need to know to cut the cord and ditch cable to order now</a></h3>
-                                    <a href="blog-details.html">Continue Reading <i class="fa fa-angle-right"></i></a>
-                                </div>
-                                <div class="single-news swiper-slide">
-                                    <a class="tip" href="#">News</a>
-                                    <img src="img/posts/post2.jpg" data-rjs="2" alt="">
-                                    <ul class="list-unstyled d-flex align-items-center">
-                                        <li><img src="img/authors/male.png" alt=""></li>
-                                        <li>by <a href="#">Zane M. Frye</a></li>
-                                        <li><a href="#">January 19, 2018</a></li>
-                                    </ul>
-                                    <h3 class="h5"><a href="blog-details.html">Why the FCC's latest net neutrality defense is hollow on the flow</a></h3>
-                                    <a href="blog-details.html">Continue Reading <i class="fa fa-angle-right"></i></a>
-                                </div>
-                                <div class="single-news swiper-slide">
-                                    <a class="tip" href="#">News</a>
-                                    <img src="img/posts/post3.jpg" data-rjs="2" alt="">
-                                    <ul class="list-unstyled d-flex align-items-center">
-                                        <li><img src="img/authors/female.png" alt=""></li>
-                                        <li>by <a href="#">Zane M. Frye</a></li>
-                                        <li><a href="#">January 19, 2018</a></li>
-                                    </ul>
-                                    <h3 class="h5"><a href="blog-details.html">Powered Enterprise IT: Cloud implementation built for the future</a></h3>
-                                    <a href="blog-details.html">Continue Reading <i class="fa fa-angle-right"></i></a>
-                                </div>
-                                <div class="single-news swiper-slide">
-                                    <a class="tip" href="#">News</a>
-                                    <img src="img/posts/post1.jpg" data-rjs="2" alt="">
-                                    <ul class="list-unstyled d-flex align-items-center">
-                                        <li><img src="img/authors/author1.jpg" alt=""></li>
-                                        <li>by <a href="#">Zane M. Frye</a></li>
-                                        <li><a href="#">January 19, 2018</a></li>
-                                    </ul>
-                                    <h3 class="h5"><a href="blog-details.html">Three privacy tools that block your Internet provider from tracking your computer</a></h3>
-                                    <a href="blog-details.html">Continue Reading <i class="fa fa-angle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-button-next next-news">
-                            <img src="img/icons/right-arrow.svg" alt="" class="svg">
-                        </div>
-                        <div class="swiper-button-prev prev-news">
-                            <img src="img/icons/left-arrow.svg" alt="" class="svg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of Latest news -->
 
     <!-- Product Carousel -->
     <section class="pt-120 pb-120">
@@ -1017,6 +896,7 @@
     </div>
 
     <!-- JS Files -->
-    <?php include_once('assets/jslink.php'); ?> 
+    <?php include_once('assets/jslink.php'); ?>
 </body>
+
 </html>
