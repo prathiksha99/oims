@@ -2,14 +2,14 @@
 include '../access/accesscontroladmin.php';
 // If form submitted, insert values into the database.
 if (isset($_POST['submit'])) {
-    $upname = $_POST['upname'];
-    $upadd1 = $_POST['upadd1'];
-    $upadd2 = $_POST['upadd2'];
-    //$contact = $_POST['contact'];
-    //$email = $_POST['email'];
-    //$pwd = $_POST['pwd'];
+    $uname = $_POST['uname'];
+    $add1 = $_POST['add1'];
+    $add2 = $_POST['add2'];
+    $contact = $_POST['contact'];
+    $email = $_POST['email'];
+    $pwd = $_POST['pwd'];
 
-    $query = "INSERT INTO `user_plans` (upname,upadd1, upadd2) VALUES ('$upname', '$upadd1', '$upadd2')";
+    $query = "INSERT INTO `user_plans` (uname, add1, add2, contact, email, pwd) VALUES ('$uname', '$add1', '$add2', '$contact', '$email', '$pwd')";
     $result = mysqli_query($con, $query);
     if ($result) {
         $smsg = "User plan has been submitted!";
@@ -25,17 +25,17 @@ if (isset($_GET['pid'])) {
 }
 if(isset($_POST['update']))
 {
-    $pname = $_POST['pname'];
-    $speed = $_POST['speed'];
-    $mdata = $_POST['mdata'];
-    $fup = $_POST['fup'];
-    $price = $_POST['price'];
-    $gst = $_POST['gst'];
+    $uname = $_POST['uname'];
+    $add1 = $_POST['add1'];
+    $add2 = $_POST['add2'];
+    $contact = $_POST['contact'];
+    $email = $_POST['email'];
+    $pwd = $_POST['pwd'];
 
-    $query = "UPDATE plans SET pname='$pname', speed='$speed', mdata= '$mdata', fup='$fup', price='$price', gst='$gst' WHERE pid='$editid'";
+    $query = "UPDATE user_plans SET uname='$uname', add1='$add1', add2= '$add2', contact='$contact', email='$email', pwd='$pwd' WHERE pid='$editid'";
     $result = mysqli_query($con, $query);
     if ($result) {
-        $smsg = "Your plan has been updated successfully";
+        $smsg = "User plan has been updated successfully";
     } else {
         $smsg = mysqli_error($con);
     }
@@ -81,7 +81,7 @@ if(isset($_POST['update']))
                 </div>
                 <!-- end page title end breadcrumb -->
                 <div class="row">
-                    <div class="col-md-12 col-lg-6">
+                    <div class="col-md-15 col-lg-12">
                         <div class="card ">
                             <div class="card-body">
                                 <h5 class="mt-0">Speed-Up your digital life</h5>
@@ -113,6 +113,14 @@ if(isset($_POST['update']))
                                             <input <?php if (isset($editid)) { ?> value="<?php echo $editdata['add2']; ?>" <?php } ?> class="form-control" name="add2" type="text" id="add2" placeholder="Enter the address 2">
                                         </div>
                                     </div>
+                                    <div class="custom-control custom-radio my-2">
+                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
+                                        <label class="custom-control-label" for="customRadio1">Male</label>
+                                    </div>
+                                    <div class="custom-control custom-radio my-2">
+                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio2">Female</label>
+                                    </div>
                                     <div class="form-group ">
                                         <label for="fup" class="col-form-label">Contact</label>
                                         <div class="">
@@ -128,18 +136,37 @@ if(isset($_POST['update']))
                                     <div class="form-group ">
                                         <label for="gst" class="col-form-label">Password</label>
                                         <div class="">
-                                            <input <?php if (isset($editid)) { ?> value="<?php echo $editdata['pwd']; ?>" <?php } ?> class="form-control" name="password" type="text" id="pwd" placeholder="Enter the GST password">
+                                            <input <?php if (isset($editid)) { ?> value="<?php echo $editdata['pwd']; ?>" <?php } ?> class="form-control" name="password" type="text" id="pwd" placeholder="Enter the password">
                                         </div>
                                     </div>
-
-
-                                    <div class="custom-control custom-radio my-2">
-                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
-                                        <label class="custom-control-label" for="customRadio1">Male</label>
+                                    <div class="form-group ">
+                                        <label for="speed" class="col-form-label">Subcription Date</label>
+                                        <div class="">
+                                                    <input class="form-control" type="date" value=" " id="example-date-input">
+                                                </div>
                                     </div>
-                                    <div class="custom-control custom-radio my-2">
-                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio2">Female</label>
+                                    <div class="form-group ">
+                                        <label for="speed" class="col-form-label">Expiry Date</label>
+                                        <div class="">
+                                                    <input class="form-control" type="date" value=" " id="example-date-input">
+                                                </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="speed" class="col-form-label">Plan Name</label>
+                                        <div class="">
+                                                    <select class="form-control">
+                                                        <option>Select</option>
+                                                        <option>Large select</option>
+                                                        <option>Small select</option>
+                                                    </select>
+                                                </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="speed" class="col-form-label">Bill Status</label>
+                                        <div class="">
+                                            <input <?php if (isset($editid)) { ?> value="<?php echo $editdata['bill_status']; ?>" <?php } ?> class="form-control" name="bill status" type="text" id="bill_status" placeholder="Enter the bill status">
+                                        </div>
+                                    </div>
                                         <?php if (isset($editid)) { ?>
                                         <button name="update" type="submit" class="btn btn-primary px-4">Update</button>
                                     <?php } else { ?>
