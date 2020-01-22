@@ -98,7 +98,7 @@ if(isset($_POST['update']))
                                 <div class="form-group ">
                                         <label for="pname" class="col-form-label">Plan Name</label>
                                         <div class="">
-                                            <input <?php if (isset($editid)) { ?> value="<?php echo $editdata['pname']; ?>" <?php } ?> class="form-control" name="pname" type="text" id="speed" placeholder="Enter the plan name">
+                                            <input <?php if (isset($editid)) { ?> value="<?php echo $editdata['pname']; ?>" <?php } ?> class="form-control" name="pname" type="text" id="pname" placeholder="Enter the plan name">
                                         </div>
                                     </div>
                                     <div class="form-group ">

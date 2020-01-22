@@ -1,12 +1,37 @@
 <?php
     include '../access/accesscontroladmin.php';
-    $getquery = mysqli_query($con, "SELECT * FROM user");
+    $getquery = mysqli_query($con, "SELECT * FROM user INNER JOIN user_plans");
+    if(isset($_POST['del']))
+    {
+    $delpid = $_POST['delpid'];
+    $delquery = mysqli_query($con,"DELETE FROM user WHERE uid='$delpid'");
+    if($delquery)
+    {
+        $getquery = mysqli_query($con, "SELECT * FROM user");
+        echo "<script>window.alert('data deleted');</script>";
+    }
+}
+if(isset($_POST['del']))
+{
+$delpid = $_POST['delpid'];
+$delquery = mysqli_query($con,"DELETE FROM plans WHERE pid='$delpid'");
+if($delquery1)
+{
+    $getquery1 = mysqli_query($con, "SELECT * FROM plans");
+    echo "<script>window.alert('data deleted');</script>";
+}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <?php include 'pages/csslink.php'; ?>
+    <style>
+        .trashicon:hover {
+            color: #007bff !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,7 +81,9 @@
                                                 <th>Gender</th>
                                                 <th>Contact</th>
                                                 <th>email</th>
-                                                <th>Password</th>
+                                                <th>Subscription Date</th>
+                                                <th>Expiry Date</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
 
@@ -69,7 +96,18 @@
                                                     <td><?php echo $getdata['gender']; ?></td>
                                                     <td><?php echo $getdata['contact']; ?></td>
                                                     <td><?php echo $getdata['email']; ?></td>
-                                                    <td><?php echo $getdata['pwd']; ?></td>
+                                                    <td><?php echo $getdata['sdate']; ?></td>
+                                                    <td><?php echo $getdata['expdate']; ?></td>
+                                                    <td>
+                                                        
+                                                            <a href="manage-plans.php?uid=<?php echo  $getdata['uid'];?> " class=""><i class="fa fa-edit mr-2 font-12"></i></a>
+                                                            <a href="manage-plans.php?pid=<?php echo  $getdata['pid'];?>"class=""></a>
+                                                            <form method="post" style="display: inline-block;">
+                                                                <button name="del" style="padding-left: 10px; border: none;" type="submit"><i class="trashicon fa fa-trash text-danger"></i></button>
+                                                                <input type="hidden" value="<?php echo  $getdata['uid']; ?>" name="delpid">
+                                                            </form>
+                                                       
+                                                    </td>
                                                 </tr>
                                             <?php } ?>
 

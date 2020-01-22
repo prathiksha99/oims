@@ -12,41 +12,19 @@
                     </li>
 
                     <li>
-                        <a href="javascript: void(0);"><i class="mdi mdi-email-variant"></i><span>Email</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <a href="javascript: void(0);"><i class="mdi mdi-format-list-bulleted-type"></i><span>Plan Management</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="email-inbox.html">Inbox</a></li>
-                            <li><a href="email-read.html">Read Email</a></li>
-                            <li><a href="email-compose.html">Compose Email</a></li>
+                            <li><a href="manage-plans.php">Manage Plans</a></li>
+                            <li><a href="view-plans.php">View Plans</a></li>
                         </ul>
                     </li>
 
-                    <li>
-                        <a href="calendar.html">
-                            <i class="mdi mdi-calendar"></i><span>Calendar</span>
-                        </a>
-                    </li>
-
-                    <li class="menu-title">Components</li>
 
                     <li>
-                        <a href="javascript: void(0);"><i class="mdi mdi-briefcase-check"></i><span>UI Elements</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <a href="javascript: void(0);"><i class="mdi mdi-account-circle"></i><span>User Management</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="ui-alerts.html">Alerts</a></li>
-                            <li><a href="ui-buttons.html">Buttons</a></li>
-                            <li><a href="ui-cards.html">Cards</a></li>
-                            <li><a href="ui-dropdowns.html">Dropdowns</a></li>
-                            <li><a href="ui-modals.html">Modals</a></li>
-                            <li><a href="ui-typography.html">Typography</a></li>
-                            <li><a href="ui-progress.html">Progress</a></li>
-                            <li><a href="ui-tabs-accordions.html">Tabs & Accordions</a></li>
-                            <li><a href="ui-tooltips-popovers.html">Tooltips & Popover</a></li>
-                            <li><a href="ui-carousel.html">Carousel</a></li>
-                            <li><a href="ui-pagination.html">Pagination</a></li>
-                            <li><a href="ui-video.html">Videos</a></li>
-                            <li><a href="ui-colors.html">Colors</a></li>
-                            <li><a href="ui-grid.html">Grid System</a></li>
-                            <li><a href="ui-spinners.html">Spinners</a></li>
-                            <li><a href="ui-toasts.html">Toasts</a></li>
+                            <li><a href="manage-plans.php">Manage Users</a></li>
+                            <li><a href="view-users.php">View Users</a></li>
                         </ul>
                     </li>
                     
