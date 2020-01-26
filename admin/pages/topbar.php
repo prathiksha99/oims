@@ -4,10 +4,10 @@
             <div class="topbar-left">
                 <a href="index.html" class="logo">
                     <span>
-                        <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm">
+                        <img src="../plugins/images/logo-sm.png" alt="logo-small" class="logo-sm">
                     </span>
                     <span>
-                        <img src="assets/images/logo.png" alt="logo-large" class="logo-lg">
+                        <img src="../plugins/images/logo.png" alt="logo-large" class="logo-lg">
                     </span>
                 </a>
             </div>
@@ -30,20 +30,6 @@
                         <a class="nav-link waves-effect waves-light search-btn" href="javascript:void(0);" data-target="#search-wrap">
                             <i class="mdi mdi-magnify nav-icon"></i>
                         </a>
-                    </li>
-
-                    <li class="hidden-sm">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="javascript: void(0);" role="button"
-                            aria-haspopup="false" aria-expanded="false">
-                            English <img src="assets/images/flags/us_flag.jpg" class="ml-2" height="16" alt=""/> <i class="mdi mdi-chevron-down"></i> 
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="javascript: void(0);"><span> German </span><img src="assets/images/flags/germany_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
-                            <a class="dropdown-item" href="javascript: void(0);"><span> Italian </span><img src="assets/images/flags/italy_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
-                            <a class="dropdown-item" href="javascript: void(0);"><span> French </span><img src="assets/images/flags/french_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
-                            <a class="dropdown-item" href="javascript: void(0);"><span> Spanish </span><img src="assets/images/flags/spain_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
-                            <a class="dropdown-item" href="javascript: void(0);"><span> Russian </span><img src="assets/images/flags/russia_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
-                        </div>
                     </li>
 
                     <li class="dropdown">
@@ -109,7 +95,7 @@
                             <a class="dropdown-item" href="#"><i class="dripicons-gear text-muted mr-2"></i> Settings</a>
                             <a class="dropdown-item" href="#"><i class="dripicons-lock text-muted mr-2"></i> Lock screen</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
+                            <a class="dropdown-item" href="../login/logout.php"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
                         </div>
                     </li>
                 </ul>
@@ -122,37 +108,6 @@
                         </button>
                     </li>
                     
-                    <li class="hidden-sm">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="false" aria-expanded="false">
-                            <i class="mdi mdi-library-plus mr-2"></i>Tools <i class="mdi mdi-chevron-down"></i> 
-                        </a>
-                        <div class="dropdown-menu">
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                Photoshop
-                            </a>
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                Visual Studio 
-                            </a>
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                Sublime Text 3
-                            </a>
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                Phpstorm
-                            </a>
-
-                        </div>
-                    </li>
-                    <li class="hidden-sm">
-                        <a class="nav-link waves-effect waves-light" href="../landing/index.html" target="_blank">
-                            <i class="mdi mdi-airplane mr-2"></i>Landing 
-                        </a>
-                    </li>
                 </ul>
 
             </nav>

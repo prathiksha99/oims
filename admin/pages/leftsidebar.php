@@ -23,7 +23,7 @@
                     <li>
                         <a href="javascript: void(0);"><i class="mdi mdi-account-circle"></i><span>User Management</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="manage-plans.php">Manage Users</a></li>
+                            <li><a href="user-plans.php">Manage Users</a></li>
                             <li><a href="view-users.php">View Users</a></li>
                         </ul>
                     </li>
@@ -88,51 +88,6 @@
                             <li><a href="icons-fontawesome.html">Font awesome</a></li>
                             <li><a href="icons-themify.html">Themify</a></li>
                             <li><a href="icons-typicons.html">Typicons</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-title">More</li>
-
-                    <li>
-                        <a href="javascript: void(0);"><i class="mdi mdi-map"></i><span>Maps</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                        <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="maps-google.html">Google Maps</a></li>
-                            <li><a href="maps-vector.html">Vector Maps</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="javascript: void(0);"><i class="mdi mdi-account-location"></i><span>Authentication</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                        <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="auth-login.html">Login</a></li>
-                            <li><a href="auth-register.html">Register</a></li>
-                            <li><a href="auth-recoverpw.html">Recover Password</a></li>
-                            <li><a href="auth-lock-screen.html">Lock Screen</a></li>
-                            <li><a href="auth-404.html">Error 404</a></li>
-                            <li><a href="auth-500.html">Error 500</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="javascript: void(0);"><i class="mdi mdi-google-pages"></i><span>Pages</span><span class="badge badge-success float-right">Hot</span></a>
-                        <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="page-tour.html">Tour</a></li>
-                            <li><a href="page-timeline.html">Timeline</a></li>
-                            <li><a href="page-invoice.html">Invoice</a></li>
-                            <li><a href="page-treeview.html">Treeview</a></li>
-                            <li><a href="page-profile.html">Profile</a></li>
-                            <li><a href="page-starter.html">Starter Page</a></li>
-                            <li><a href="page-pricing.html">Pricing</a></li>
-                            <li><a href="page-faq.html">FAQs</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="javascript:void(0);"><i class="mdi mdi-contact-mail"></i><span>Email Templates</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                        <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="email-templates-basic.html">Basic Action Email</a></li>
-                            <li><a href="email-templates-alert.html">Alert Email</a></li>
-                            <li><a href="email-templates-billing.html">Billing Email</a></li>
                         </ul>
                     </li>
 

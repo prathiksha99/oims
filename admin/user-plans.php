@@ -34,10 +34,11 @@ if (isset($_POST['submit'])) {
 
 if (isset($_GET['uid'])) {
     $editid = $_GET['uid'];
-    $getquery = mysqli_query($con, "SELECT * FROM user WHERE uid='$editid'");
+    $getquery = mysqli_query($con, "SELECT * FROM user JOIN user_plans ON user.uid=user_plans.uid WHERE user.uid='$editid'");
     $editdata = mysqli_fetch_assoc($getquery);
 }
 if (isset($_POST['update'])) {
+
     $uname = $_POST['uname'];
     $add1 = $_POST['add1'];
     $add2 = $_POST['add2'];
@@ -46,26 +47,25 @@ if (isset($_POST['update'])) {
     $email = $_POST['email'];
     $pwd = $_POST['pwd'];
 
-    $sdate= $_POST['sdate'];
-    $expdate= $_POST['expdate'];
-    $bill_status= $_POST['bill_status'];
+    $sdate = $_POST['sdate'];
+    $expdate = $_POST['expdate'];
+    $bill_status = $_POST['bill_status'];
     $plans = $_POST['plans'];
 
     $query3 = "UPDATE user SET uname='$uname', add1='$add1', add2='$add2', customRadio='$gender', contact='$contact', email='$email', pwd='$pwd'  WHERE uid='$editid'";
     $result3 = mysqli_query($con, $query);
-    if ($result) {
-        $getlastuid = mysqli_insert_id($con);
-        $query4 = "UPDATE user_plans SET sdate='$sdate', expdate='$expdate', bill_status='$bill_status' WHERE uid='$editid'"; 
-        $result4 = mysqli_query($con, $query4);
-        if($result4){
+
+    $query4 = "UPDATE user_plans SET sdate='$sdate', expdate='$expdate', bill_status='$bill_status' WHERE uid='$editid'";
+    $result4 = mysqli_query($con, $query4);
+
+
+   
+    if ($result3 && $result4) {
         $smsg = "Your plan has been updated successfully";
     } else {
         $smsg = mysqli_error($con);
     }
-} else {
-    $smsg = mysqli_error($con);
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -140,11 +140,11 @@ if (isset($_POST['update'])) {
                                         </div>
                                     </div>
                                     <div class="custom-control custom-radio my-2">
-                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
+                                        <input <?php if (isset($editid)) { ?> <?php if($editdata['gender']=="male"){ echo "checked"; } ?> <?php } ?> type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
                                         <label class="custom-control-label" for="customRadio1">Male</label>
                                     </div>
                                     <div class="custom-control custom-radio my-2">
-                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                        <input <?php if (isset($editid)) { ?> <?php if($editdata['gender']=="female"){ echo "checked"; } ?> <?php } ?> type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
                                         <label class="custom-control-label" for="customRadio2">Female</label>
                                     </div>
                                     <div class="form-group ">
@@ -217,4 +217,5 @@ if (isset($_POST['update'])) {
     <!-- jQuery  -->
     <?php include 'pages/jslinks.php'; ?>
 </body>
+
 </html>

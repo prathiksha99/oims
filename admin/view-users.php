@@ -1,25 +1,15 @@
 <?php
-    include '../access/accesscontroladmin.php';
-    $getquery = mysqli_query($con, "SELECT * FROM user INNER JOIN user_plans");
-    if(isset($_POST['del']))
-    {
-    $delpid = $_POST['delpid'];
-    $delquery = mysqli_query($con,"DELETE FROM user WHERE uid='$delpid'");
-    if($delquery)
-    {
-        $getquery = mysqli_query($con, "SELECT * FROM user");
+include '../access/accesscontroladmin.php';
+$getquery = mysqli_query($con, "SELECT * FROM user JOIN user_plans ON user.uid=user_plans.uid");
+
+if (isset($_POST['del'])) {
+    $deluid = $_POST['deluid'];
+    $delquery = mysqli_query($con, "DELETE FROM user_plans WHERE uid='$deluid'");
+    if ($delquery) {
+        $delquery1 = mysqli_query($con, "DELETE FROM user WHERE uid='$deluid'");
+        $getquery = mysqli_query($con, "SELECT * FROM user JOIN user_plans ON user.uid=user_plans.uid");
         echo "<script>window.alert('data deleted');</script>";
     }
-}
-if(isset($_POST['del']))
-{
-$delpid = $_POST['delpid'];
-$delquery = mysqli_query($con,"DELETE FROM plans WHERE pid='$delpid'");
-if($delquery1)
-{
-    $getquery1 = mysqli_query($con, "SELECT * FROM plans");
-    echo "<script>window.alert('data deleted');</script>";
-}
 }
 ?>
 <!DOCTYPE html>
@@ -66,7 +56,7 @@ if($delquery1)
                 </div>
                 <!-- end page title end breadcrumb -->
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-15">
                         <div class="card">
                             <div class="card-body table-responsive">
                                 <h5 class="mt-0">Speed-Up your digital life</h5>
@@ -83,6 +73,7 @@ if($delquery1)
                                                 <th>email</th>
                                                 <th>Subscription Date</th>
                                                 <th>Expiry Date</th>
+                                                <th>Bill Status</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -98,15 +89,15 @@ if($delquery1)
                                                     <td><?php echo $getdata['email']; ?></td>
                                                     <td><?php echo $getdata['sdate']; ?></td>
                                                     <td><?php echo $getdata['expdate']; ?></td>
+                                                    <td><?php echo $getdata['bill_status']; ?></td>
                                                     <td>
-                                                        
-                                                            <a href="manage-plans.php?uid=<?php echo  $getdata['uid'];?> " class=""><i class="fa fa-edit mr-2 font-12"></i></a>
-                                                            <a href="manage-plans.php?pid=<?php echo  $getdata['pid'];?>"class=""></a>
-                                                            <form method="post" style="display: inline-block;">
-                                                                <button name="del" style="padding-left: 10px; border: none;" type="submit"><i class="trashicon fa fa-trash text-danger"></i></button>
-                                                                <input type="hidden" value="<?php echo  $getdata['uid']; ?>" name="delpid">
-                                                            </form>
-                                                       
+
+                                                        <a href="user-plans.php?uid=<?php echo  $getdata['uid']; ?> " class=""><i class="fa fa-edit mr-2 font-12"></i></a>
+                                                        <form method="post" style="display: inline-block;">
+                                                            <button name="del" style="padding-left: 10px; border: none;" type="submit"><i class="trashicon fa fa-trash text-danger"></i></button>
+                                                            <input type="hidden" value="<?php echo  $getdata['uid']; ?>" name="deluid">
+                                                        </form>
+
                                                     </td>
                                                 </tr>
                                             <?php } ?>
