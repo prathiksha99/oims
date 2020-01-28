@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Document Title -->
-    <title>Serviney</title>
+    <title>Air.IP</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="favicon.png">
@@ -25,7 +25,6 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-7">
                         <div class="header-info text-center text-md-left">
-                            <span>Get up to 1 Gbps Download Speed on $98.50/m <a href="#">Get It Now</a></span>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5">
@@ -37,8 +36,8 @@
                             <div class="client-area position-relative">
                                 <span id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account <i class="fa fa-caret-down"></i></span>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Sign In</a>
-                                    <a class="dropdown-item" href="#">Sign Up</a>
+                                    <a class="dropdown-item" href="login/auth-register.php">Register</a>
+                                    <a class="dropdown-item" href="login/auth-login.php">Login</a>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +52,7 @@
                     <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-9">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="index.php">
                                 <img src="img/logo.png" data-rjs="2" alt="VPNet">
                             </a>
                         </div>
@@ -63,8 +62,7 @@
                             <!-- Header-menu -->
                             <div class="header-menu">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="http://billing.ywhmcs.com/?systpl=Serviney">WHMCS</a></li>
+                                    <li><a href="index.php">Home</a></li>
                                     <li>
                                         <a href="#">Pages <i class="fa fa-caret-down"></i></a>
                                         <ul>
@@ -131,7 +129,7 @@
                         <!-- Header Call -->
                         <div class="header-call text-right">
                             <span>Call Now</span>
-                            <a href="tel:+1234567890">(+1) 234-567-8900</a>
+                            <a href="tel:+1234567890">(+91) 819-759-7627</a>
                         </div>
                     </div>
                 </div>
@@ -163,62 +161,7 @@
     <!-- Checkout -->
     <section class="pt-120 pb-70">
         <div class="container">
-            <div class="row">
-                <!-- Returning Customer -->
-                <div class="col-12" data-animate="fadeInUp" data-delay=".1">
-                    <div class="checkout-additional-option light-bg mb-30">
-                        <span><i class="fa fa-window-maximize"></i>Returning Customer? <a href="#returning-customer" data-toggle="collapse" aria-expanded="false">Click Here to Login</a></span>
-                    </div>
-                    <div class="collapse" id="returning-customer">
-                        <div class="returning-customer mb-30">
-                            <p>If you have shopped with us before, please enter your details in the boxes below. If you are a new customer, please proceed to the Billing & Shipping section.</p>
-                            <form class="parsley-validate" action="#">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-field">
-                                            <span class="input-label">Username or E-mail Address <span class="text-danger">*</span></span>
-                                            <input type="text" class="theme-input-style" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-field">
-                                            <span class="input-label">Password <span class="text-danger">*</span></span>
-                                            <input type="password" class="theme-input-style" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-field d-flex align-items-center">
-                                            <button class="btn" type="submit">Log In</button>
-                                            <label class="m-0"><input type="checkbox">Remember Me?</label>
-                                        </div>
-                                        <a href="#">Forgot Your Password?</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Returning Customer -->
-                
-                <!-- Coupon Code -->
-                <div class="col-12" data-animate="fadeInUp" data-delay=".3">
-                    <div class="checkout-additional-option light-bg mb-30">
-                        <span><i class="fa fa-window-maximize"></i>Have a coupon? <a href="#coupon-code" data-toggle="collapse" aria-expanded="false">Click here to enter your code</a></span>
-                    </div>
-                    <div class="collapse" id="coupon-code">
-                        <div class="returning-customer checkout-coupon mb-30">
-                            <form class="parsley-validate" action="#">
-                                <div class="d-md-flex">
-                                    <div class="form-field mb-0">
-                                        <input type="text" class="theme-input-style" placeholder="Input Coupon Code" required>
-                                    </div>
-                                    <button class="btn">Apply Coupon</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Coupon Code -->
+            <div class="row">  
             </div>
             
             <form class="parsley-validate" action="#">
@@ -262,21 +205,6 @@
                                 </div>
                             </div>
                             
-                            <div class="form-field">
-                                <label>Country <span class="text-danger">*</span></label>
-                                <div class="select-wrapper">
-                                <select class="theme-input-style">
-                                    <option value="#">Australia</option>
-                                    <option value="#">Bangladesh</option>
-                                    <option value="#">Canada</option>
-                                    <option value="#">Denmark</option>
-                                    <option value="#">Russian Federation</option>
-                                    <option value="#">UK</option>
-                                    <option value="#">USA</option>
-                                </select>
-                                </div>
-                            </div>
-
                             <div class="form-field mb-3">
                                 <label>Address <span class="text-danger">*</span></label>
                                 <input type="text" class="theme-input-style" placeholder="Stree address" required>
@@ -377,7 +305,7 @@
                             <div class="form-field">
                                 <div class="payment-method">
                                     <label><input type="radio" name="payment-type">Debit/Credit Card</label>
-                                    <img src="img/payment-methods.png" alt="">
+                                    <img src="lander-plugins/img/payment-methods.png" alt="">
                                     <hr class="mt-30 mb-30">
                                     <button type="submit" class="btn">Place Order</button>
                                 </div>
@@ -405,11 +333,11 @@
                                 <ul class="list-unstyled">
                                     <li>
                                         <i class="fa fa-phone"></i>
-                                        <a href="tel:+1234567890">(+1) 234-567-890</a>
+                                        <a href="tel:+1234567890">(+91) 819-759-7627</a>
                                     </li>
                                     <li>
                                         <i class="fa fa-envelope-o"></i>
-                                        <a href="mailto:serviney.demo@fakemail.com">serviney.demo@fakemail.com</a>
+                                        <a href="mailto:serviney.demo@fakemail.com">airip.demo@fakemail.com</a>
                                     </li>
                                     <li>
                                         <i class="fa fa-map-marker"></i>
@@ -490,7 +418,7 @@
                     <!-- Copyright -->
                     <div class="col-md-6">
                         <div class="copyright-text text-center text-md-left">
-                            <p class="mb-md-0">&copy; 2018 Serviney. All rights reserved.</p>
+                            <p class="mb-md-0">&copy; 2020 Air.IP. All rights reserved.</p>
                         </div>
                     </div>
 

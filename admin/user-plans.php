@@ -184,7 +184,7 @@ if (isset($_POST['update'])) {
                                             <select name="plans"   class="form-control">
                                                 <option selected hidden>Select Plans</option>
                                                 <?php while ($getdata = mysqli_fetch_assoc($getplansquery)) { ?>
-                                                    <option <?php if (isset($editid)) { ?>  value="<?php echo $editdata['pname']; ?>" <?php } ?> >  <?php echo $getdata['pname']; ?> 
+                                                    <option <?php if (isset($editid)) { ?>  value="<?php echo $editdata['pid']; ?>" <?php } ?> >  <?php echo $getdata['pname']; ?> 
                                                     </option>
                                             
                                                 <?php } ?>

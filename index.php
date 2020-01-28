@@ -26,7 +26,6 @@ $uname = $_SESSION['uname'];
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-7">
                         <div class="header-info text-center text-md-left">
-                            <span>Get up to 1 Gbps Download Speed on $98.50/m <a href="#">Get It Now</a></span>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5">
@@ -292,7 +291,7 @@ $uname = $_SESSION['uname'];
                                 <li>Unlimited bandwidth</li>
                             </ul>
                             <p><sup>₹</sup><?php echo $getplansdata['price']; ?> <span>/Monthly</span></p>
-                            <a href="#" class="btn">Order This Plan</a>
+                            <a href="checkout.php" class="btn">Order This Plan</a>
                     </div>
                 </div>
             <?php } ?>
