@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
 
 if (isset($_GET['uid'])) {
     $editid = $_GET['uid'];
-    $getquery = mysqli_query($con, "SELECT * FROM user JOIN user_plans ON user.uid=user_plans.uid WHERE user.uid='$editid'");
+    $getquery = mysqli_query($con, "SELECT * FROM user JOIN user_plans ON user.uid=user_plans.uid JOIN plans ON plans.pid=user_plans.pid WHERE user.uid='$editid'");
     $editdata = mysqli_fetch_assoc($getquery);
 }
 if (isset($_POST['update'])) {
@@ -117,7 +117,7 @@ if (isset($_POST['update'])) {
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">×</span>
                                         </button>
-                                        <i class="mdi mdi-check-circle mr-2"></i><?php echo $smsg; ?>
+                                        <i clakss="mdi mdi-check-circle mr-2"></i><?php echo $smsg; ?>
                                     </div>
                                 <?php } ?>
                                 <form method="POST">
@@ -140,11 +140,11 @@ if (isset($_POST['update'])) {
                                         </div>
                                     </div>
                                     <div class="custom-control custom-radio my-2">
-                                        <input <?php if (isset($editid)) { ?> <?php if($editdata['gender']=="male"){ echo "checked"; } ?> <?php } ?> type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
+                                        <input <?php if (isset($editid)) { ?> value= "<?php if($editdata['gender']=="male"){ echo "checked"; } ?>" <?php } ?> type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
                                         <label class="custom-control-label" for="customRadio1">Male</label>
                                     </div>
                                     <div class="custom-control custom-radio my-2">
-                                        <input <?php if (isset($editid)) { ?> <?php if($editdata['gender']=="female"){ echo "checked"; } ?> <?php } ?> type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                        <input <?php if (isset($editid)) { ?> value= "<?php if($editdata['gender']=="female"){ echo "checked"; } ?>" <?php } ?> type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
                                         <label class="custom-control-label" for="customRadio2">Female</label>
                                     </div>
                                     <div class="form-group ">
@@ -156,13 +156,13 @@ if (isset($_POST['update'])) {
                                     <div class="form-group ">
                                         <label for="price" class="col-form-label">Email</label>
                                         <div class="">
-                                            <input <?php if (isset($editid)) { ?> value="<?php echo $editdata['email']; ?>" <?php } ?>class="form-control" name="email" type="text" id="email" placeholder="Enter the email">
+                                            <input <?php if (isset($editid)) { ?> value="<?php echo $editdata['email']; ?>" <?php } ?>class="form-control" name="email" type="email" id="email" placeholder="Enter the email">
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="gst" class="col-form-label">Password</label>
                                         <div class="">
-                                            <input <?php if (isset($editid)) { ?> value="<?php echo $editdata['pwd']; ?>" <?php } ?>class="form-control" name="pwd" type="text" id="pwd" placeholder="Enter the password">
+                                            <input <?php if (isset($editid)) { ?> value="<?php echo $editdata['pwd']; ?>" <?php } ?>class="form-control" name="pwd" type="password" id="pwd" placeholder="Enter the password">
                                         </div>
                                     </div>
                                     <div class="form-group ">
@@ -181,11 +181,14 @@ if (isset($_POST['update'])) {
                                         <label for="speed" class="col-form-label">Plan Name</label>
                                         <div class="">
                                             <?php $getplansquery = mysqli_query($con, "SELECT * FROM plans"); ?>
-                                            <select name="plans" class="form-control">
+                                            <select name="plans"   class="form-control">
                                                 <option selected hidden>Select Plans</option>
                                                 <?php while ($getdata = mysqli_fetch_assoc($getplansquery)) { ?>
-                                                    <option value="<?php echo $getdata['pid']; ?>"><?php echo $getdata['pname']; ?></option>
+                                                    <option <?php if (isset($editid)) { ?>  value="<?php echo $editdata['pname']; ?>" <?php } ?> >  <?php echo $getdata['pname']; ?> 
+                                                    </option>
+                                            
                                                 <?php } ?>
+                                            
                                             </select>
                                         </div>
                                     </div>

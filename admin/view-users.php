@@ -1,13 +1,13 @@
 <?php
 include '../access/accesscontroladmin.php';
-$getquery = mysqli_query($con, "SELECT * FROM user JOIN user_plans ON user.uid=user_plans.uid");
+$getquery = mysqli_query($con, "SELECT * FROM user JOIN user_plans ON user.uid=user_plans.uid JOIN plans ON plans.pid=user_plans.pid");
 
 if (isset($_POST['del'])) {
     $deluid = $_POST['deluid'];
     $delquery = mysqli_query($con, "DELETE FROM user_plans WHERE uid='$deluid'");
     if ($delquery) {
         $delquery1 = mysqli_query($con, "DELETE FROM user WHERE uid='$deluid'");
-        $getquery = mysqli_query($con, "SELECT * FROM user JOIN user_plans ON user.uid=user_plans.uid");
+        $getquery = mysqli_query($con, "SELECT * FROM user JOIN user_plans ON user.uid=user_plans.uid JOIN plans ON plans.pid=user_plans.pid");
         echo "<script>window.alert('data deleted');</script>";
     }
 }
@@ -71,6 +71,7 @@ if (isset($_POST['del'])) {
                                                 <th>Gender</th>
                                                 <th>Contact</th>
                                                 <th>email</th>
+                                                <th>Plan name</th>
                                                 <th>Subscription Date</th>
                                                 <th>Expiry Date</th>
                                                 <th>Bill Status</th>
@@ -87,6 +88,7 @@ if (isset($_POST['del'])) {
                                                     <td><?php echo $getdata['gender']; ?></td>
                                                     <td><?php echo $getdata['contact']; ?></td>
                                                     <td><?php echo $getdata['email']; ?></td>
+                                                    <td><?php echo $getdata['pname']; ?></td>
                                                     <td><?php echo $getdata['sdate']; ?></td>
                                                     <td><?php echo $getdata['expdate']; ?></td>
                                                     <td><?php echo $getdata['bill_status']; ?></td>
