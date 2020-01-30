@@ -11,6 +11,7 @@ if (isset($_POST['login'])) {
     $rows = mysqli_num_rows($result);
     if ($rows >= 1) {
         $_SESSION['uname'] = $uname;
+        
         echo "<script> window.location='../index.php'; </script>";
     } else {
         $query2 = "SELECT * FROM `admin` WHERE auname='$uname' AND  apwd='$pwd'";

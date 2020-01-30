@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
 
 if (isset($_GET['uid'])) {
     $editid = $_GET['uid'];
-    $getquery = mysqli_query($con, "SELECT * FROM user JOIN user_plans ON user.uid=user_plans.uid JOIN plans ON plans.pid=user_plans.pid WHERE user.uid='$editid'");
+    $getquery = mysqli_query($con, "SELECT * FROM user JOIN user_plans ON user.uid=user_plans.uid WHERE user.uid='$editid'");
     $editdata = mysqli_fetch_assoc($getquery);
 }
 if (isset($_POST['update'])) {
@@ -140,11 +140,11 @@ if (isset($_POST['update'])) {
                                         </div>
                                     </div>
                                     <div class="custom-control custom-radio my-2">
-                                        <input <?php if (isset($editid)) { ?> value= "<?php if($editdata['gender']=="male"){ echo "checked"; } ?>" <?php } ?> type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                        <input value="male" <?php if (isset($editid)) { ?> <?php if($editdata['gender']=="male"){ echo "checked"; } ?> <?php } ?> type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
                                         <label class="custom-control-label" for="customRadio1">Male</label>
                                     </div>
                                     <div class="custom-control custom-radio my-2">
-                                        <input <?php if (isset($editid)) { ?> value= "<?php if($editdata['gender']=="female"){ echo "checked"; } ?>" <?php } ?> type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                        <input value="female" <?php if (isset($editid)) { ?><?php if($editdata['gender']=="female"){ echo "checked"; } ?> <?php } ?> type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
                                         <label class="custom-control-label" for="customRadio2">Female</label>
                                     </div>
                                     <div class="form-group ">
@@ -184,7 +184,7 @@ if (isset($_POST['update'])) {
                                             <select name="plans"   class="form-control">
                                                 <option selected hidden>Select Plans</option>
                                                 <?php while ($getdata = mysqli_fetch_assoc($getplansquery)) { ?>
-                                                    <option <?php if (isset($editid)) { ?>  value="<?php echo $editdata['pid']; ?>" <?php } ?> >  <?php echo $getdata['pname']; ?> 
+                                                    <option <?php if (isset($editid)) { ?><?php if($editdata['pid']==$getdata['pid']){ echo "selected"; } ?> <?php } ?> value="<?php echo $getdata['pid']; ?>"> <?php echo $getdata['pname']; ?> 
                                                     </option>
                                             
                                                 <?php } ?>
@@ -198,7 +198,7 @@ if (isset($_POST['update'])) {
                                             <input <?php if (isset($editid)) { ?> value="<?php echo $editdata['bill_status']; ?>" <?php } ?> class="form-control" name="bill_status" type="text" id="bill_status" placeholder="Enter the bill status">
                                         </div>
                                     </div>
-                                    <?php if (isset($editid)) { ?>
+                                    <?php if(isset($editid)) { ?>
                                         <button name="update" type="submit" class="btn btn-primary px-4">Update</button>
                                     <?php } else { ?>
                                         <button name="submit" type="submit" class="btn btn-primary px-4">Submit</button>

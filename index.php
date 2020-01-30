@@ -5,6 +5,12 @@ if (!isset($_SESSION['uname'])) {
     echo "<script>window.location.href='login/auth-login.php'</script>";
 }
 $uname = $_SESSION['uname'];
+
+// isset
+// if isset session
+// if not redirect login
+// if set add pid and uid to table cart (retrive uid from session)
+// redirect checkput.php
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -291,7 +297,10 @@ $uname = $_SESSION['uname'];
                                 <li>Unlimited bandwidth</li>
                             </ul>
                             <p><sup>₹</sup><?php echo $getplansdata['price']; ?> <span>/Monthly</span></p>
+                            <!-- form -->
+                            <!-- hidden input with pid -->
                             <a href="checkout.php" class="btn">Order This Plan</a>
+                            <!-- form end -->
                     </div>
                 </div>
             <?php } ?>

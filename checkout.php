@@ -1,3 +1,7 @@
+<?php 
+// where uid = session uid
+$getquery = mysqli_query($con, "SELECT * FROM cart");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -268,8 +272,9 @@
                             <p class="border-bottom">Product Name <span class="float-right">Total</span></p>
                             <table class="order-details-table table table-bordered mb-50">
                                 <tbody>
+                                <?php while ($getdata = mysqli_fetch_assoc($getquery)) { ?>
                                     <tr>
-                                        <td>Wireless security camera for personal/home use</td>
+                                    <td><?php echo $getdata['pid']; ?></td>
                                         <td>$13.50</td>
                                     </tr>
                                     <tr>
@@ -292,6 +297,7 @@
                                         <td>Total</td>
                                         <td>$50.20</td>
                                     </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
 
