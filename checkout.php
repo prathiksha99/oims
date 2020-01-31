@@ -1,6 +1,10 @@
 <?php 
 // where uid = session uid
-$getquery = mysqli_query($con, "SELECT * FROM cart");
+session_start();
+if (!isset($_SESSION['uid'])) {
+    echo "<script>window.location.href='login/auth-login.php'</script>";
+}
+$uid = $_SESSION['uid'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -272,9 +276,8 @@ $getquery = mysqli_query($con, "SELECT * FROM cart");
                             <p class="border-bottom">Product Name <span class="float-right">Total</span></p>
                             <table class="order-details-table table table-bordered mb-50">
                                 <tbody>
-                                <?php while ($getdata = mysqli_fetch_assoc($getquery)) { ?>
                                     <tr>
-                                    <td><?php echo $getdata['pid']; ?></td>
+                                    <td>fhgfgdgfjhjlkkljk</td>
                                         <td>$13.50</td>
                                     </tr>
                                     <tr>
@@ -282,22 +285,9 @@ $getquery = mysqli_query($con, "SELECT * FROM cart");
                                         <td>$21.00</td>
                                     </tr>
                                     <tr>
-                                        <td>Micro-soft Office 365 Business Premium</td>
-                                        <td>$19.50</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Shipping Charge</td>
-                                        <td>Free</td>
-                                    </tr>
-                                    <tr>
-                                        <td>VAT</td>
-                                        <td>10%</td>
-                                    </tr>
-                                    <tr>
                                         <td>Total</td>
                                         <td>$50.20</td>
                                     </tr>
-                                    <?php } ?>
                                 </tbody>
                             </table>
 

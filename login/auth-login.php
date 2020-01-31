@@ -11,7 +11,7 @@ if (isset($_POST['login'])) {
     $rows = mysqli_num_rows($result);
     if ($rows >= 1) {
         $_SESSION['uname'] = $uname;
-        
+        $_SESSION['uid'] = $uid;
         echo "<script> window.location='../index.php'; </script>";
     } else {
         $query2 = "SELECT * FROM `admin` WHERE auname='$uname' AND  apwd='$pwd'";
@@ -23,8 +23,18 @@ if (isset($_POST['login'])) {
             $_SESSION['aid'] = $getinfo['aid'];
             echo "<script> window.location= '../admin/index.php'; </script>";
         } else {
-            $smsg = "username/password incorrect";
-            echo "<div class='form'>";
+            $query3 = "SELECT * FROM `employee` WHERE empname='$empname' AND  emppwd='$emppwd'";
+            $result3 = mysqli_query($con, $query3);
+            $getinfo = mysqli_fetch_assoc($result3);
+            $rows3 = mysqli_num_rows($result3);
+            if ($rows3 >= 1) {
+                $_SESSION['empname'] = $getinfo['empname'];
+                $_SESSION['empid'] = $getinfo['empid'];
+                echo "<script> window.location= '../employee/emp-index.php'; </script>";
+            } else {
+                $smsg = "username/password incorrect";
+                echo "<div class='form'>";
+            }
         }
     }
 }
@@ -50,9 +60,9 @@ if (isset($_POST['login'])) {
                     <div class="px-3">
                         <h4 class="text-muted font-18 mb-2 text-center">Welcome Back</h4>
                         <p class="text-muted text-center">Sign in to continue with Air.IP.</p>
-                        <?php if(isset($smsg)) { ?>
+                        <?php if (isset($smsg)) { ?>
                             <div class="alert alert-danger" role="alert">
-                                            Username/Password incorrect </div>   
+                                Username/Password incorrect </div>
                         <?php } ?>
                         <form class="form-horizontal my-4" method="post">
 

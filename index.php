@@ -1,14 +1,23 @@
 <?php
 include 'access/db.php';
-session_start();
-if (!isset($_SESSION['uname'])) {
+// isset
+if (isset($_POST['order'])) {
+    $getpid = $_POST['getpid'];
+    
+    $query = "INSERT into `cart` (uid, pid) VALUES ('$uid', '$pid')";
+    $result = mysqli_query($con, $query);
+    if ($result) {
+        echo "<script> window.location='checkout.php'; </script>";
+}
+    } else {
+        $smsg = mysqli_error($con);
+    }
+// if isset session
+
+// if not redirect login
+if (!isset($_SESSION['uid'])) {
     echo "<script>window.location.href='login/auth-login.php'</script>";
 }
-$uname = $_SESSION['uname'];
-
-// isset
-// if isset session
-// if not redirect login
 // if set add pid and uid to table cart (retrive uid from session)
 // redirect checkput.php
 ?>
@@ -298,9 +307,13 @@ $uname = $_SESSION['uname'];
                             </ul>
                             <p><sup>₹</sup><?php echo $getplansdata['price']; ?> <span>/Monthly</span></p>
                             <!-- form -->
+                            <form method="POST">
                             <!-- hidden input with pid -->
-                            <a href="checkout.php" class="btn">Order This Plan</a>
-                            <!-- form end -->
+                           <!--<button href="checkout.php" class="btn">Order This Plan</button> -->
+                           <button name="order" class="btn btn-primary btn-block waves-effect waves-light" type="submit">Order This Plan<i class="fas fa-sign-in-alt ml-1"></i></button>
+                           <input type="hidden" value="<?php echo $getdata['pid']; ?>" name="getpid"> 
+                           <!-- form end -->
+                            </form>
                     </div>
                 </div>
             <?php } ?>

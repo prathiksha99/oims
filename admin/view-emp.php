@@ -1,13 +1,13 @@
 <?php
-include '../access/accesscontroladmin.php';
-$getquery = mysqli_query($con, "SELECT * FROM user JOIN user_plans ON user.uid=user_plans.uid JOIN plans ON user_plans.pid= plans.pid");
+include '../access/db.php';
+$getquery = mysqli_query($con, "SELECT * FROM employee");
+
 
 if (isset($_POST['del'])) {
-    $deluid = $_POST['deluid'];
-    $delquery = mysqli_query($con, "DELETE FROM user_plans WHERE uid='$deluid'");
+    $delempid = $_POST['delempid'];
+    $delquery = mysqli_query($con, "DELETE FROM employee WHERE empid='$delempid'");
     if ($delquery) {
-        $delquery1 = mysqli_query($con, "DELETE FROM user WHERE uid='$deluid'");
-        $getquery = mysqli_query($con, "SELECT * FROM user JOIN user_plans ON user.uid=user_plans.uid");
+        $getquery = mysqli_query($con, "SELECT * FROM employee");
         echo "<script>window.alert('data deleted');</script>";
     }
 }
@@ -47,10 +47,10 @@ if (isset($_POST['del'])) {
                             <div class="float-right">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="javascript:void(0);">Air.IP</a></li>
-                                    <li class="breadcrumb-item active">View Users</li>
+                                    <li class="breadcrumb-item active">View Employee</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">View Users</h4>
+                            <h4 class="page-title">View Employee</h4>
                         </div>
                     </div>
                 </div>
@@ -65,16 +65,11 @@ if (isset($_POST['del'])) {
                                     <table id="datatable2" class="table border-0">
                                         <thead>
                                             <tr>
-                                                <th>User Name</th>
-                                                <th>Address 1</th>
-                                                <th>Address 2</th>
+                                                <th>Employee Name</th>
+                                                <th>Address </th>
                                                 <th>Gender</th>
                                                 <th>Contact</th>
                                                 <th>email</th>
-                                                <th>Plan name</th>
-                                                <th>Subscription Date</th>
-                                                <th>Expiry Date</th>
-                                                <th>Bill Status</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -82,22 +77,17 @@ if (isset($_POST['del'])) {
                                         <tbody>
                                             <?php while ($getdata = mysqli_fetch_assoc($getquery)) { ?>
                                                 <tr>
-                                                    <td><?php echo $getdata['uname']; ?></td>
-                                                    <td><?php echo $getdata['add1']; ?></td>
-                                                    <td><?php echo $getdata['add2']; ?></td>
-                                                    <td><?php echo $getdata['gender']; ?></td>
-                                                    <td><?php echo $getdata['contact']; ?></td>
-                                                    <td><?php echo $getdata['email']; ?></td>
-                                                    <td><?php echo $getdata['pname']; ?></td>
-                                                    <td><?php echo $getdata['sdate']; ?></td>
-                                                    <td><?php echo $getdata['expdate']; ?></td>
-                                                    <td><?php echo $getdata['bill_status']; ?></td>
+                                                    <td><?php echo $getdata['empname']; ?></td>
+                                                    <td><?php echo $getdata['empadd']; ?></td>
+                                                    <td><?php echo $getdata['empgender']; ?></td>
+                                                    <td><?php echo $getdata['empcontact']; ?></td>
+                                                    <td><?php echo $getdata['empemail']; ?></td>
                                                     <td>
 
-                                                        <a href="user-plans.php?uid=<?php echo  $getdata['uid']; ?> " class=""><i class="fa fa-edit mr-2 font-12"></i></a>
+                                                        <a href="manage-emp.php?empid=<?php echo  $getdata['empid']; ?> " class=""><i class="fa fa-edit mr-2 font-12"></i></a>
                                                         <form method="post" style="display: inline-block;">
                                                             <button name="del" style="padding-left: 10px; border: none;" type="submit"><i class="trashicon fa fa-trash text-danger"></i></button>
-                                                            <input type="hidden" value="<?php echo  $getdata['uid']; ?>" name="deluid">
+                                                            <input type="hidden" value="<?php echo  $getdata['empid']; ?>" name="delempid">
                                                         </form>
 
                                                     </td>

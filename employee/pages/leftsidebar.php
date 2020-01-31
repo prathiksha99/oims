@@ -12,10 +12,10 @@
                     </li>
 
                     <li>
-                        <a href="javascript: void(0);"><i class="mdi mdi-format-list-bulleted-type"></i><span>Plan Management</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <a href="javascript: void(0);"><i class="mdi mdi-format-list-bulleted-type"></i><span>Bill Management</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="manage-plans.php">Manage Plans</a></li>
-                            <li><a href="view-plans.php">View Plans</a></li>
+                            <li><a href="add-bills.php">Add Bills</a></li>
+                            <li><a href="view-plans.php">View Bills</a></li>
                         </ul>
                     </li>
 
@@ -29,10 +29,17 @@
                     </li>
                     
                     <li>
-                        <a href="javascript: void(0);"><i class="mdi mdi-account-multiple"></i><span>Staff Management</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <a href="javascript: void(0);"><i class="mdi mdi-buffer"></i><span>Advanced UI</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li><a href="manage-emp.php">Manage Employees</a></li>
-                            <li><a href="view-emp.php">View Employees</a></li>
+                            <li><a href="advanced-rangeslider.html">Range Slider</a></li>
+                            <li><a href="advanced-sweetalerts.html">Sweet Alerts</a></li>
+                            <li><a href="advanced-nestable.html">Nestable List</a></li>
+                            <li><a href="advanced-ratings.html">Ratings</a></li>
+                            <li><a href="advanced-highlight.html">Highlight</a></li>
+                            <li><a href="advanced-clipboard.html">Clipboard</a></li>
+                            <li><a href="advanced-lightbox.html">Lightbox</a></li>
+                            <li><a href="advanced-session.html">Session Timeout</a></li>
+                            <li><a href="advanced-scrollbars.html">Scrollbars</a></li>
                         </ul>
                     </li>
 
