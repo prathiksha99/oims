@@ -1,10 +1,11 @@
 <?php
 include 'access/db.php';
+session_start();
 // isset
 if (isset($_POST['order'])) {
     $getpid = $_POST['getpid'];
-    
-    $query = "INSERT into `cart` (uid, pid) VALUES ('$uid', '$pid')";
+    $getuid = $_SESSION['uid'];
+    $query = "INSERT into `cart` (uid, pid) VALUES ('$getuid', '$getpid')";
     $result = mysqli_query($con, $query);
     if ($result) {
         echo "<script> window.location='checkout.php'; </script>";
@@ -15,7 +16,7 @@ if (isset($_POST['order'])) {
 // if isset session
 
 // if not redirect login
-if (!isset($_SESSION['uid'])) {
+ if (!isset($_SESSION['uid'])) {
     echo "<script>window.location.href='login/auth-login.php'</script>";
 }
 // if set add pid and uid to table cart (retrive uid from session)
@@ -312,6 +313,7 @@ if (!isset($_SESSION['uid'])) {
                            <!--<button href="checkout.php" class="btn">Order This Plan</button> -->
                            <button name="order" class="btn btn-primary btn-block waves-effect waves-light" type="submit">Order This Plan<i class="fas fa-sign-in-alt ml-1"></i></button>
                            <input type="hidden" value="<?php echo $getdata['pid']; ?>" name="getpid"> 
+
                            <!-- form end -->
                             </form>
                     </div>

@@ -8,10 +8,11 @@ if (isset($_POST['login'])) {
 
     $query = "SELECT * FROM user WHERE uname='$uname' and pwd='$pwd'";
     $result = mysqli_query($con, $query);
+    $getinfo = mysqli_fetch_assoc($result);
     $rows = mysqli_num_rows($result);
     if ($rows >= 1) {
-        $_SESSION['uname'] = $uname;
-        $_SESSION['uid'] = $uid;
+        $_SESSION['uname'] = $getinfo['uname'];
+        $_SESSION['uid'] = $getinfo['uid'];
         echo "<script> window.location='../index.php'; </script>";
     } else {
         $query2 = "SELECT * FROM `admin` WHERE auname='$uname' AND  apwd='$pwd'";
