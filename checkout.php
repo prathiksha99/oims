@@ -1,4 +1,10 @@
 <?php 
+if(isset($_GET['uid']))
+{
+    $query="SELECT * FROM user WHERE uid= '$_GET[uid]'";
+    $result= mysqli_query($con, $query);
+    $getuid = mysqli_fetch_array($result);
+}
 // where uid = session uid
 session_start();
 if (!isset($_SESSION['uid'])) {
@@ -182,7 +188,7 @@ $uid = $_SESSION['uid'];
                                 <div class="col-lg-6">
                                     <div class="form-field">
                                         <label>First Name <span class="text-danger">*</span></label>
-                                        <input type="text" class="theme-input-style" required>
+                                        <input type="text" name="uname" class="theme-input-style" id="uname" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -202,24 +208,24 @@ $uid = $_SESSION['uid'];
                                 <div class="col-lg-6">
                                     <div class="form-field">
                                         <label>Email address <span class="text-danger">*</span></label>
-                                        <input type="email" class="theme-input-style" required>
+                                        <input type="email" name="email" class="theme-input-style" id="email" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-field">
                                         <label>Phone <span class="text-danger">*</span></label>
-                                        <input type="text" class="theme-input-style" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$" required>
+                                        <input type="text" name="contact" class="theme-input-style" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$" id="contact" required>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="form-field mb-3">
                                 <label>Address <span class="text-danger">*</span></label>
-                                <input type="text" class="theme-input-style" placeholder="Stree address" required>
+                                <input type="text" name="add1" class="theme-input-style" id="add1" placeholder="Stree address" required>
                             </div>
 
                             <div class="form-field">
-                                <input type="text" class="theme-input-style" placeholder="Appartment, Suit, Flatl, etc. (Optional)" required>
+                                <input type="text" name="add2" class="theme-input-style" placeholder="Appartment, Suit, Flatl, etc. (Optional)" id="add2" required>
                             </div>
 
                             <div class="form-field">

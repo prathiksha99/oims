@@ -24,7 +24,7 @@ if (isset($_POST['login'])) {
             $_SESSION['aid'] = $getinfo['aid'];
             echo "<script> window.location= '../admin/index.php'; </script>";
         } else {
-            $query3 = "SELECT * FROM `employee` WHERE empname='$empname' AND  emppwd='$emppwd'";
+            $query3 = "SELECT * FROM `employee` WHERE empname='$uname' AND  emppwd='$pwd'";
             $result3 = mysqli_query($con, $query3);
             $getinfo = mysqli_fetch_assoc($result3);
             $rows3 = mysqli_num_rows($result3);

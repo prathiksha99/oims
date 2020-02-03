@@ -4,21 +4,22 @@ session_start();
 // isset
 if (isset($_POST['order'])) {
     $getpid = $_POST['getpid'];
+    if(!isset($_SESSION['uid']))
+    {
+        echo "<script> window.location.href='login/auth-login.php'; </script>";
+    }
     $getuid = $_SESSION['uid'];
     $query = "INSERT into `cart` (uid, pid) VALUES ('$getuid', '$getpid')";
     $result = mysqli_query($con, $query);
     if ($result) {
-        echo "<script> window.location='checkout.php'; </script>";
+        echo "<script> window.location.href='checkout.php'; </script>";
 }
     } else {
         $smsg = mysqli_error($con);
     }
 // if isset session
-
 // if not redirect login
- if (!isset($_SESSION['uid'])) {
-    echo "<script>window.location.href='login/auth-login.php'</script>";
-}
+ 
 // if set add pid and uid to table cart (retrive uid from session)
 // redirect checkput.php
 ?>
@@ -311,9 +312,9 @@ if (isset($_POST['order'])) {
                             <form method="POST">
                             <!-- hidden input with pid -->
                            <!--<button href="checkout.php" class="btn">Order This Plan</button> -->
+                           
+                           <input type="hidden" value="<?php echo $getplansdata['pid']; ?>" name="getpid"> 
                            <button name="order" class="btn btn-primary btn-block waves-effect waves-light" type="submit">Order This Plan<i class="fas fa-sign-in-alt ml-1"></i></button>
-                           <input type="hidden" value="<?php echo $getdata['pid']; ?>" name="getpid"> 
-
                            <!-- form end -->
                             </form>
                     </div>
